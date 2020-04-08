@@ -1,0 +1,7 @@
+﻿  SList.c
+e:\vs2015代码\数据结构\链表1(单链表)\链表1(单链表)\slist.c(109): warning C4033: “SListPopFront”必须返回值
+e:\vs2015代码\数据结构\链表1(单链表)\链表1(单链表)\slist.c(83): warning C4716: “SListPopBack”: 必须返回一个值
+e:\vs2015代码\数据结构\链表1(单链表)\链表1(单链表)\slist.c(100): warning C4716: “SListPushFront”: 必须返回一个值
+e:\vs2015代码\数据结构\链表1(单链表)\链表1(单链表)\slist.c(125): warning C4716: “SListPopFront”: 必须返回一个值
+  链表1(单链表).vcxproj -> E:\VS2015代码\数据结构\链表1(单链表)\Debug\链表1(单链表).exe
+  链表1(单链表).vcxproj -> E:\VS2015代码\数据结构\链表1(单链表)\Debug\链表1(单链表).pdb (Full PDB)
