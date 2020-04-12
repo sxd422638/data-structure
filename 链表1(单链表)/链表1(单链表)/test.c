@@ -18,6 +18,19 @@ void TestList1()
 	SListPrint(plist);
 	SListPopFront(&plist);
 	SListPrint(plist);
+	SListNode* ret = SListFind(plist, 1);//查找  修改
+	if (ret)
+		ret->_data = 30;
+	SListPrint(plist);
+
+
+
+	SListNode* pos = SListFind(plist, 30);
+
+	SListInsertAfter(pos, 10000);       //插入后一位 
+	SListPrint(plist);
+	SListEraseAfter(plist);
+	SListPrint(plist);                  //删除后一位
 
 }
 int main()

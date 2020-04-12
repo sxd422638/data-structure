@@ -125,6 +125,53 @@ SListNode* SListPopFront(SListNode** pplist)                //头删
 }
 
 
+//不会改变链表头的用一级指针，会改变的用二级指针
+SListNode* SListFind(SListNode* plist, SLTDataType x) //查找
+{
+	SListNode* cur = plist;
+	while (cur)
+	{
+		if (cur->_data == x)
+		{
+			return cur;
+
+		}
+		cur = cur->_next;
+
+	}
+	return NULL;
+}
+
+void SListInsertAfter(SListNode* pos, SLTDataType x)  //插入后一个  中间 边界  头部 都可以使用
+{
+	assert(pos);
+	SListNode* next = pos->_next;
+	//pos newnode next
+	SListNode* newnode = BuySListNode(x);
+	pos->_next = newnode;
+	newnode->_next = next;
+
+
+}
+
+
+void SListEraseAfter(SListNode* pos)//删除后一个 中间 边界  头部 都可以使用
+{
+	//pos newnode next
+	assert(pos);
+	SListNode* next = pos->_next;
+	if (next != NULL)
+	{
+		SListNode* nextnext = next->_next;
+		free(next);
+		pos->_next = nextnext;
+
+	}
+
+}
+
+
+
 
 
 

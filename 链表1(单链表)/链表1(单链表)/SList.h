@@ -28,6 +28,10 @@ void  SListPrint(SListNode* plist);						//只读的时候一级指针
 SListNode* SListPopBack(SListNode** pplist);                 //尾删
 SListNode* SListPushFront(SListNode** pplist, SLTDataType x);//头插
 SListNode* SListPopFront(SListNode** pplist);                //头删
+SListNode* SListFind(SListNode* plist, SLTDataType x);//查找
+
+void SListInsertAfter(SListNode* pos, SLTDataType x);      //插入
+void SListEraseAfter(SListNode* pos);//删除
 
 
 
