@@ -1,0 +1,18 @@
+﻿  test.c
+  BinaryTree.c
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(22): warning C4133: “=”: 从“BTNode *”到“BinaryTreeNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(25): warning C4133: “=”: 从“BTNode *”到“BinaryTreeNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(45): warning C4133: “函数”: 从“BinaryTreeNode *”到“BTNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(58): warning C4133: “函数”: 从“BinaryTreeNode *”到“BTNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(71): warning C4133: “函数”: 从“BinaryTreeNode *”到“BTNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(72): warning C4133: “函数”: 从“BinaryTreeNode *”到“BTNode *”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(91): warning C4013: “QueueEmepty”未定义；假设外部返回 int
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(98): warning C4133: “函数”: 从“BinaryTreeNode *”到“QDataType”的类型不兼容
+e:\vs2015代码\数据结构\二叉树的实现\二叉树的实现\binarytree.c(102): warning C4133: “函数”: 从“BinaryTreeNode *”到“QDataType”的类型不兼容
+  正在生成代码...
+BinaryTree.obj : error LNK2019: 无法解析的外部符号 _QueueInit，该符号在函数 _BinaryTreeLevelOrder 中被引用
+BinaryTree.obj : error LNK2019: 无法解析的外部符号 _QueuePush，该符号在函数 _BinaryTreeLevelOrder 中被引用
+BinaryTree.obj : error LNK2019: 无法解析的外部符号 _QueuePop，该符号在函数 _BinaryTreeLevelOrder 中被引用
+BinaryTree.obj : error LNK2019: 无法解析的外部符号 _QueueFront，该符号在函数 _BinaryTreeLevelOrder 中被引用
+BinaryTree.obj : error LNK2019: 无法解析的外部符号 _QueueEmepty，该符号在函数 _BinaryTreeLevelOrder 中被引用
+E:\VS2015代码\数据结构\二叉树的实现\Debug\二叉树的实现.exe : fatal error LNK1120: 5 个无法解析的外部命令
