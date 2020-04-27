@@ -1,0 +1,10 @@
+﻿  test.c
+e:\vs2015代码\数据结构\排序 sort\排序 sort\test.c(61): warning C4013: “time”未定义；假设外部返回 int
+e:\vs2015代码\数据结构\排序 sort\排序 sort\test.c(78): warning C4013: “clock”未定义；假设外部返回 int
+  sort.c
+e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(6): warning C4018: “<”: 有符号/无符号不匹配
+e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(23): warning C4018: “<”: 有符号/无符号不匹配
+e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(57): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+MSVCRTD.lib(exe_main.obj) : error LNK2019: 无法解析的外部符号 _main，该符号在函数 "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 中被引用
+E:\VS2015代码\数据结构\排序 sort\Debug\排序 sort.exe : fatal error LNK1120: 1 个无法解析的外部命令

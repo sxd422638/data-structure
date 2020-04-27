@@ -1,0 +1,11 @@
+﻿  sort.c
+sort.c(6): warning C4018: “<”: 有符号/无符号不匹配
+sort.c(23): warning C4018: “<”: 有符号/无符号不匹配
+sort.c(57): warning C4018: “<”: 有符号/无符号不匹配
+  test.c
+test.c(61): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码
+  All 11 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  排序 sort.vcxproj -> E:\VS2015代码\数据结构\排序 sort\Release\排序 sort.exe
+  排序 sort.vcxproj -> E:\VS2015代码\数据结构\排序 sort\Release\排序 sort.pdb (Full PDB)
