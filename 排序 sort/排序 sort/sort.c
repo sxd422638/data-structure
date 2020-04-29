@@ -263,33 +263,33 @@ int GetMidIndex(int* a, int begin, int end)
 
 //右边去做key
 
-int PartSort1(int* a, int begin, int end)
-{
-	int mid = GetMidIndex(a, begin, end);
-	Swap(&a[mid], &a[end]);
-	int key = end;
-	while (begin < end)
-	{
-		//begin先走 找大
-		while (begin < end && a[begin] <= a[key])//a[end] < a[key]的时候停下来
-		{
-			++begin;
-		}
-		Swap(&a[begin], &a[end]);
-		//end后走 找小
-		while (begin < end && a[end] >= a[key])//a[end] < a[key]的时候停下来
-		{
-			--end;
-		}
-		
-	}
-	Swap(&a[key], &a[begin]);
-	return begin;
-}
-
-
-
-
+//int PartSort1(int* a, int begin, int end)
+//{
+//	int mid = GetMidIndex(a, begin, end);
+//	Swap(&a[mid], &a[end]);
+//	int key = end;
+//	while (begin < end)
+//	{
+//		//begin先走 找大
+//		while (begin < end && a[begin] <= a[key])//a[end] < a[key]的时候停下来
+//		{
+//			++begin;
+//		}
+//		Swap(&a[begin], &a[end]);
+//		//end后走 找小
+//		while (begin < end && a[end] >= a[key])//a[end] < a[key]的时候停下来
+//		{
+//			--end;
+//		}
+//		
+//	}
+//	Swap(&a[key], &a[begin]);
+//	return begin;
+//}
+//
+//
+//
+//
 //2.挖坑法
 int PartSort2(int* a, int begin, int end)
 {
@@ -316,10 +316,10 @@ int PartSort2(int* a, int begin, int end)
 }
 
 //3.前后指针法
-int PartSort2(int* a, int begin, int end)
+int PartSort3(int* a, int begin, int end)
 {
 	int prev = begin - 1;
-	int cur = begin;
+	int cur = begin ;
 	int key = end;
 	while (cur < end)
 	{
@@ -332,48 +332,121 @@ int PartSort2(int* a, int begin, int end)
 	}
 	++prev;
 	Swap(&a[prev], &a[key]);
+	return prev;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-//快速排序(递归)
+//7.快速排序(递归)
 void QuickSort(int* a, int left, int right)
 {
 	if (left >= right)
 	{
 		return;
 	}
-	if ((right - left + 1) < 10)//表示个数
-	{
-		InesrtSort( a+left ,  right - left + 1);
+	//if ((right - left + 1) < 10)//表示个数
+	//{
+	//	InesrtSort( a+left ,  right - left + 1);
 
-	}
+	//}
 
-		int keyIndex = PartSort(a, left, right);
+		int keyIndex = PartSort3(a, left, right);
+	
 		//[left , keyindex-1] [keyindex] [keyindex , right]
 		QuickSort(a, left, keyIndex - 1);
 		QuickSort(a, keyIndex + 1, right);
 	
  }
 
+//7.快速排序(非递归)
+//栈解决 存入的是数组的下标 
+//取栈的区间进行单趟排序  [0 , 7] 
+//
+//void QuickSortNonR(int* a, int left, int right)
+//{
+//	Stack st;
+//	StackInit(&st);
+//	//1.先把这个数的区间进行入栈
+//	StackPush(&st, left);
+//	StackPush(&st, right);//此时入了0和7 划分成了两端子区间
+//	while (!StackEmpty(&st))//非空的时候进入循环
+//	{
+//		int end = StackTop(&st);//取栈顶的元素
+//		StackPop(&st);
+//		int begin = StackTop(&st);//取栈顶的元素
+//		StackPop(&st);
+//		int keyindex = PartSort1(a, begin, end);
+//		//此时 划分了3段区间 [begin , keyindex-1]keyindex [keyindex+1 , end]
+//		if (begin < keyindex - 1)
+//		{
+//			StackPush(&st, begin);
+//			StackPush(&st, keyindex - 1);
+//		}
+//		if (keyindex + 1 < end)
+//		{
+//			StackPush(&st, keyindex + 1);
+//			StackPush(&st, end);
+//		}
+//
+//		
+//	}
+//
+//
+//
+//	StackDestory(&st);
+//}
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+//8.归并排序
 
 
+void _MergeSort(int* a, int left, int right, int* tmp)//tmp为归并后的新数组 
+{
+	if (left >= right)
+		return;
+	//递归[0,3]->[0,1][2,3]
+	//递归[0,1]->[0,0][1,1]
+	//递归[0,0]->返回
+	//递归[1,1]->返回
+	//归并出有序的[0,1]  其他的以此类推
+	int mid = (left + right)/ 2;
+	// 对两端区间递归排序 [left, mid] [mid+1, right]
+	_MergeSort(a, left, mid, tmp);
+	_MergeSort(a, mid + 1, right, tmp);
 
-
-
+	//归并
+	int begin1 = left;
+	int end1 = mid;
+	int begin2 = mid + 1;
+	int end2 = right;
+	int index = left;
+	while (begin1 <= end1 && begin2 <= end2)
+	{
+		if (a[begin1] <= a[begin2])
+			tmp[index++] = a[begin1++];
+		else
+			tmp[index++] = a[begin2++];
+	}
+	while (begin1 <= end1)//此时说明begin1还没结束
+	{
+		tmp[index++] = a[begin1++];
+	}
+	while (begin2 <= end2)//此时说明begin2还没结束
+	{
+		tmp[index++] = a[begin2++];
+	}
+	//最后要把tmp数组里面的内容拷贝回a里面
+	memcpy(a + left, tmp + left, sizeof(int)*(right - left + 1));//最后表示数据的个数
+}
+void MergeSort(int* a, int n) 
+{
+	assert(a);
+	int* tmp = (int*)malloc(sizeof(int)*n);
+	_MergeSort(a, 0, n - 1, tmp);//子函数
+	free(tmp);
+}
 
 
 

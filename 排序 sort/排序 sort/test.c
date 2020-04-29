@@ -44,8 +44,14 @@ void TestBubbleSort()
 }
 
 
+void TestQuickSort()
 
+{
+	int a[] = { 4 ,2 ,9 , 5 ,7, 6, 3, 1, 8 , 0 };
+	QuickSort(a, 0 , sizeof(a) / sizeof(a[0]));
+	PrintArray(a, sizeof(a) / sizeof(a[0]));
 
+}
 
 
 
@@ -55,7 +61,8 @@ int main()
 	//TestShellSort();
 	//TestSelectSort();
 	//TestHeapSort();
-	TestBubbleSort();
+	/*TestBubbleSort();*/
+	TestQuickSort();
 	return 0;
 	
 }

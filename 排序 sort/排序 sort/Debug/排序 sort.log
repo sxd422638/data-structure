@@ -1,8 +1,7 @@
-﻿  test.c
-  sort.c
+﻿  sort.c
 e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(6): warning C4018: “<”: 有符号/无符号不匹配
 e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(24): warning C4018: “<”: 有符号/无符号不匹配
 e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(58): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
+e:\vs2015代码\数据结构\排序 sort\排序 sort\sort.c(398): warning C4013: “memcpy”未定义；假设外部返回 int
   排序 sort.vcxproj -> E:\VS2015代码\数据结构\排序 sort\Debug\排序 sort.exe
   排序 sort.vcxproj -> E:\VS2015代码\数据结构\排序 sort\Debug\排序 sort.pdb (Full PDB)
