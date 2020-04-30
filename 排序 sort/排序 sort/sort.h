@@ -24,7 +24,9 @@ int PartSort1(int* a, int begin , int end);//1.hoare版本
 int PartSort2(int* a, int begin, int end);//2.挖坑法
 int PartSort3(int* a, int begin, int end); //3.前后指针法
 
-int GetMidIndex(int* a, int left, int right);//三数取中(快排优化)
-void QuickSort(int* a, int left, int right);//快速排序
+int GetMidIndex(int* a, int left, int right);//三数取中( 快排优化 )
+void QuickSort(int* a, int left, int right);// 快速排序
 //void QuickSortNonR(int* a, int left, int right)快速排序(非递归)
 void _MergeSort(int* a, int left, int right, int* tmp);//归并排序
+
+void CountSort(int a, int n);//计数排序
